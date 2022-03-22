@@ -9,20 +9,20 @@ io.on('connection', socket =>{// Escutando o evento 'connection' criado pelo soc
    // console.log("Novo cliente conectado!!!  ID: "+socket.id);
 
     socket.on("entrou", (data)=>{
-        console.log("dados recebidos: ");
+  //      console.log("dados recebidos: ");
         console.log(JSON.stringify(data,undefined, 4));
         
         socket.emit("verMensagensAnteriores", mensagens);
     });
 
-    socket.on("mensagemEnviada", (obj)=>{
+    socket.on("mensagemEnviada", obj=>{
         mensagens.push(obj);
-    //    console.log("mensagem:  // "+obj.mensagem);
+      //  console.log("mensagem:  // "+obj.mensagem);
       //  console.log("mensagemlength:  "+mensagens.length);
 
-       
-        socket.broadcast.emit("novaMensagem", obj);
-    })
+        socket.broadcast.emit("novaMensagem", obj);//Envia para todos os sockets, menos para aquele que chamou o broadcast
+        socket.emit("novaMensagem", obj);
+    });
 
   /*  socket.on("mensagem", message=>{
         mensagens.push(message);

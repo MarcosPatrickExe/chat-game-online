@@ -12,6 +12,8 @@ const urlSearch = new URLSearchParams(
 const nome = urlSearch.get("nome");
 const sala = urlSearch.get("sala");
 
+$(`#title`).append(`Chat (${nome})`);
+
 console.log(`${nome} //// ${sala}`);
 
 socket.emit("entrou", { 
@@ -21,15 +23,15 @@ socket.emit("entrou", {
 });
 
 socket.on("verMensagensAnteriores", function( messages ){ 
-      console.log("atualizar mensagens: "+messages);
+      //console.log("atualizar mensagens: "+messages);
       enviarMensagem( messages );
 });
 
+
 socket.on("novaMensagem", function( message ){ 
-    console.log("nova mensagen: "+message);
+   // console.log("nova mensagen: "+message);
     enviarMensagem( [message] );
 });
-
 
 
 function enviarMensagem( msg){
@@ -43,6 +45,7 @@ function enviarMensagem( msg){
                 </span>
              </h4>
         `);
+
     });
 }
 
@@ -61,11 +64,15 @@ $('#enviar').on("click", function(event){
             mensagem
        });
 
+       $('#message-space').val("");
+
       // enviarMensagem( [{ nome,  mensagem }] );
    }
 
 });
    
+
+
 
 
 
