@@ -1,0 +1,64 @@
+.container-main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+   /* margin: auto; */
+    width: 50%;
+    height: 80%;
+    background-color: rgb(0, 110, 255); 
+    border-radius: 10%;
+    padding: 1% 0 2% 2%;
+    box-shadow: 8px 8px 1px 5px rgba(0, 18, 43, 0.4);
+}
+
+#chat-space{
+    width: 95%;
+    height: 60%;
+    background-color: #002e36;
+    border-radius: 5%; 
+    overflow-y: scroll;
+    padding: 3% 0 0 3%;
+}   
+
+#message-space{
+    width: 95%;
+    height: 13%;
+}
+
+#title{
+    margin-left: 40%;
+    color: white;
+    margin-top: 3px; 
+}
+
+#botoes{
+    position: relative;
+    width: 95%;
+    height: 9%;
+}
+
+#botoes > button{
+    position: relative;
+    margin-top: 1%;
+    left: 25%;
+    transform: translateX(-25%);
+    margin-left: 10%;
+}
+
+#botoes > button:hover{ 
+    background-color: rgb(0, 47, 109); 
+    color: white; 
+    border: none ;  
+    transform: scale(1.5);/*
+    transition-propety: transform;
+    transition-duration: 1s; */
+}
+
+h4{
+    color :#00d9ff;
+}
+
+.mensage-user{
+    color: white;
+}

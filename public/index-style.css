@@ -1,0 +1,32 @@
+*{ padding: 0;margin: 0; }
+
+body{ font-family: "Times New Roman", Times, serif; }
+
+label, h2, h5{ color: white; }
+
+p{ color: rgb(0, 47, 109); font-size: 14px; font-weight: bold;}
+
+.background-main{
+    position: absolute;
+    height:100%;
+    width: 100%; 
+    background-image: linear-gradient(#013b4a 50%, #00576e);
+}
+
+.formulario{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+   /* margin: auto; */
+    width: 30%;
+    height: 70%;
+    background-color: rgb(0, 110, 255); 
+    border-radius: 5%;
+    padding: 2% 5% 2% 3%;
+    box-shadow: 8px 8px 1px 5px rgba(0, 18, 43, 0.4);
+}
+
+#btn-entrar{ margin-left: 25%; }
+
+#btn-entrar:hover{ background-color: rgb(0, 47, 109); color: white; border: none ;  }
