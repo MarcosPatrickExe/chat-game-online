@@ -27,15 +27,20 @@ socket.on("verMensagensAnteriores", function( messages ){
       enviarMensagem( messages );
 });
 
+socket.on("disconnect", function( ){ 
+    console.log("desconectado");
+});
 
 socket.on("novaMensagem", function( message ){ 
    // console.log("nova mensagen: "+message);
-    enviarMensagem( [message] );
+
+   if(message.sala == sala)
+         enviarMensagem( [message] );
 });
 
 
-function enviarMensagem( msg){
-    msg.forEach( (ms)=>{
+function enviarMensagem( mensagens ){
+    mensagens.forEach( (ms)=>{
 
         $('#chat-space').append(`
              <h4 id="list-item-1">
@@ -61,14 +66,22 @@ $('#enviar').on("click", function(event){
       
        socket.emit("mensagemEnviada", { 
             nome, 
-            mensagem
+            mensagem,
+            sala
        });
 
        $('#message-space').val("");
+       $('#alert-msg-vazia').css({"display":"none"});
 
       // enviarMensagem( [{ nome,  mensagem }] );
+   }else{
+       $('#alert-msg-vazia').css({"display":"block"});
    }
 
+});
+
+$('#sair').on("click", function(event){
+    
 });
    
 
