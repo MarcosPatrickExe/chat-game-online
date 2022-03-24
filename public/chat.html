@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+   <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta http-equiv="Content-Language" content="pt-br">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat - WebSocket</title>
 
@@ -16,17 +17,15 @@
 <body>
     <div class="background-main">
 
-        <div class="container-main">
+        <div class="container-main container col-10 col-sm-8 col-md-6 col-lg-5 col-xl-4">
             <h1 id="title"></h1>
             
             <div id="chat-space" data-spy="scroll"  data-offset="0" class="scrollspy-example mt-3">
                 <h4 id="list-item-1">(bot): <span class="mensage-user">Escreva algo...</span></h4>
-              
-               
             </div>
 
             <input id="message-space" name="message-space" type="text" class="form-control mt-3" placeholder="Escreva sua mensagem aqui...">
-            <small id="alert-msg-vazia" style="display: none;">A mensagem não pode ser vazia!!!</small>
+            <small id="alert-msg-vazia" style="visibility: hidden;">A mensagem não pode ser vazia!!!</small>
 
             <div id="botoes" class="mt-3"> 
                 <button id="enviar" type="button" class="btn btn-warning">Enviar</button>

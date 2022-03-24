@@ -12,7 +12,7 @@ const urlSearch = new URLSearchParams(
 const nome = urlSearch.get("nome");
 const sala = urlSearch.get("sala");
 
-$(`#title`).append(`Chat (${nome})`);
+$(`#title`).append(`Chat (${nome}) - sala ${sala}`);
 
 console.log(`${nome} //// ${sala}`);
 
@@ -27,11 +27,9 @@ socket.on("verMensagensAnteriores", function( messages ){
       enviarMensagem( messages );
 });
 
-socket.on("disconnect", function( ){ 
-    console.log("desconectado");
-});
 
-socket.on("novaMensagem", function( message ){ 
+
+socket.on("novaMensagem", function( message ){
    // console.log("nova mensagen: "+message);
 
    if(message.sala == sala)
@@ -62,7 +60,7 @@ $('#enviar').on("click", function(event){
     
   const mensagem = $('#message-space').val();
 
-  if( mensagem.length ){ // OU $('input[name=message-space]').val()
+  if( mensagem.length ){ 
       
        socket.emit("mensagemEnviada", { 
             nome, 
@@ -70,23 +68,21 @@ $('#enviar').on("click", function(event){
             sala
        });
 
-       $('#message-space').val("");
-       $('#alert-msg-vazia').css({"display":"none"});
+       $('#message-space').val("");// OU $('input[name=message-space]').val()
+       $('#alert-msg-vazia').css({"visibility":"hidden"});
 
-      // enviarMensagem( [{ nome,  mensagem }] );
-   }else{
-       $('#alert-msg-vazia').css({"display":"block"});
-   }
+    // enviarMensagem( [{ nome,  mensagem }] );
+       }else{
+            $('#alert-msg-vazia').css({"visibility":"visible"});
+       }
 
 });
+
+
 
 $('#sair').on("click", function(event){
-    
+
+    socket.emit("disconnect", { id : socket.id });
 });
    
-
-
-
-
-
 

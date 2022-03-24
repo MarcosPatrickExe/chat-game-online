@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-   
+    <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="pt-br">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - WebSocket</title>
   <!-- 
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta charset="ISO-8859-1">
@@ -12,8 +15,7 @@
     <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
      -->
     
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Chat - WebSocket</title>
+   
     <link rel="stylesheet" type="text/css" href="index-style.css">
     <link 
         rel="stylesheet" 
@@ -24,7 +26,7 @@
 <body>
     <div class="background-main">
 
-        <div class="formulario">
+        <div class="formulario container col-8 col-sm-6 col-md-6 col-lg-4">
             <form action="chat.html">
                 <h2>Seja bem-vindo :)</h2>
                <!-- <div class="form-group mt-3">
@@ -47,19 +49,29 @@
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
-                            <option value="3">4</option>
-                            <option value="4">5</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                       </select>
-                      <p>(Cada sala tem um limite de 10 pessoas!)</p>
-                  </div>
-                <div class="form-group form-check mt-3">
-                    <h5>Voce prefere...</h5>
+                      <p>(Cada sala tem um limite de 100 pessoas!)</p>
+                </div>
+                <div class="form-group form-check mt-3" id="respostas-div">
+                    <label for="respostas">Qual a sua idade? (opcional)</label>
+                    <select class="form-control" name="respostas" id="respostas">
+                        <option>Selecione</option>
+                        <option>10-19</option>
+                        <option>20-29</option>
+                        <option>30-39</option>
+                        <option>40-49</option>
+                        <option>igual ou maior que 50</option>
+                   </select>
+                <!--   <h5>Voce prefere...</h5>
                     <input type="checkbox" class="form-check-input" id="check1"/>
                     <label class="form-check-label" for="check1">Enviar msg para todos</label>
                 </div>
                 <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="check2"/>
                     <label class="form-check-label" for="check1">Habilitar cor de fundo</label>
+                -->
                 </div>
                 <button id="btn-entrar" type="submit" class="btn btn-light mt-5">Entrar no bate-papo</button>
             </form>
@@ -76,6 +88,18 @@
 
     </div>
 
-   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">    </script>
+
+    <script>
+
+        $('form').on('submit', function(){ // OU: "$('form').submit(function(){  })
+
+            if( $('#inputEmail').val()=='' || $('#sala').val()==' '){
+                alert("preencha os campos vazios!!!!");
+                return false;
+            }
+        });
+
+    </script>
 </body>
 </html>

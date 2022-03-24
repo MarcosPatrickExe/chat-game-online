@@ -4,6 +4,8 @@ body{ font-family: "Times New Roman", Times, serif; }
 
 label, h2, h5{ color: white; }
 
+h5{ margin-left: -22px; }
+
 p{ color: rgb(0, 47, 109); font-size: 14px; font-weight: bold;}
 
 .background-main{
@@ -27,6 +29,10 @@ p{ color: rgb(0, 47, 109); font-size: 14px; font-weight: bold;}
     box-shadow: 8px 8px 1px 5px rgba(0, 18, 43, 0.4);
 }
 
-#btn-entrar{ margin-left: 25%; }
+#btn-entrar{ margin-left: 25%; margin-bottom: -10%; }
 
 #btn-entrar:hover{ background-color: rgb(0, 47, 109); color: white; border: none ;  }
+
+#respostas-div{
+    margin-left: -7%;
+}
