@@ -2,6 +2,8 @@ import { serverHttp } from './http.js';
 //require('websocket');// importando o socket que foi inicializado no server
 import './websocket.js';
 
+const PORT = process.env.PORT || 3000; // A variavel de ambiente "PORT" é definida pelo servidor de hospedagem
+
 serverHttp.listen(3000, ()=>{
     console.log("Server is running on PORT 3000");
 });
