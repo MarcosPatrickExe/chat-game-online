@@ -27,16 +27,13 @@
             <input id="message-space" name="message-space" type="text" class="form-control mt-3" placeholder="Escreva sua mensagem aqui...">
             <small id="alert-msg-vazia" style="visibility: hidden;">A mensagem não pode ser vazia!!!</small>
 
-            <div id="botoes" class="mt-3"> 
-                <button id="enviar" type="button" class="btn btn-warning">Enviar</button>
-                <button id="sair" type="button" class="btn btn-warning"><a href="index.html">Sair da sala</a></button>
+            <div id="botoes" class="mt-3 row"> 
+                <button id="enviar" type="button" class="btn btn-warning col">Enviar</button>
+                <button id="sair" type="button" class="btn btn-warning col"><a href="index.html">Sair da sala</a></button>
             </div>
         </div>
 
     </div>
-
-
-
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -46,8 +43,10 @@
 
 
     <!-- Esse script proverá o objeto "io" do lado do cliente. 
-         Ele vem do arquivo "socket.io" da pasta node modules do servidor... -->
-    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+         Ele vem do arquivo "socket.io" da pasta node modules do servidor
+         que se encontra no dominio definido pelo atributo "src"...  -->
+    <script src="https://chat-game-online.herokuapp.com/socket.io/socket.io.js"></script>
+    
 
     <script src="./chat.js"></script>
 </body>

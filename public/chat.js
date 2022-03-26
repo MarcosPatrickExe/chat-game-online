@@ -56,25 +56,25 @@ function enviarMensagem( mensagens ){
 
 
 $('#enviar').on("click", function(event){
-  //  event.preventDefault();
-    
-  const mensagem = $('#message-space').val();
+    //  event.preventDefault();
+        
+    const mensagem = $('#message-space').val();
 
-  if( mensagem.length ){ 
+    if( mensagem.length ){ 
       
-       socket.emit("mensagemEnviada", { 
-            nome, 
-            mensagem,
-            sala
-       });
+        socket.emit("mensagemEnviada", { 
+                nome, 
+                mensagem,
+                sala
+        });
 
-       $('#message-space').val("");// OU $('input[name=message-space]').val()
-       $('#alert-msg-vazia').css({"visibility":"hidden"});
+        $('#message-space').val("");// OU $('input[name=message-space]').val()
+        $('#alert-msg-vazia').css({"visibility":"hidden"});
 
     // enviarMensagem( [{ nome,  mensagem }] );
-       }else{
-            $('#alert-msg-vazia').css({"visibility":"visible"});
-       }
+    }else{
+        $('#alert-msg-vazia').css({"visibility":"visible"});
+    }
 
 });
 

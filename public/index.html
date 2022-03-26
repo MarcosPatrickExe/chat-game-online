@@ -46,6 +46,7 @@
                 <div class="form-group">
                       <label for="sala">Escolha uma sala...</label>
                       <select class="form-control" name="sala" id="sala">
+                            <option value="Selecione">Selecione</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -73,7 +74,7 @@
                     <label class="form-check-label" for="check1">Habilitar cor de fundo</label>
                 -->
                 </div>
-                <button id="btn-entrar" type="submit" class="btn btn-light mt-5">Entrar no bate-papo</button>
+                <button id="btn-entrar" type="submit" class="btn btn-warning mt-5">Entrar no bate-papo</button>
             </form>
         
         </div>
@@ -94,7 +95,7 @@
 
         $('form').on('submit', function(){ // OU: "$('form').submit(function(){  })
 
-            if( $('#inputEmail').val()=='' || $('#sala').val()==' '){
+            if( $('#inputEmail').val()=='' || $('#sala').val()=='Selecione'){
                 alert("preencha os campos vazios!!!!");
                 return false;
             }
